@@ -6,6 +6,8 @@ pip install psycopg2==2.6.2
 
 sparse quickstart extweetwordcount
 
+git clone https://github.com/timothymaltjr/exercise_2.git
+
 
     create    extweetwordcount
     create    extweetwordcount/.gitignore
