@@ -1,0 +1,5 @@
+install psychopg
+pip install psycopg2==2.6.2
+
+sparse quickstart extweetwordcount
+
