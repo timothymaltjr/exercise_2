@@ -1,8 +1,20 @@
+1. Fire up AWS with the correct AMI, instance, and volume.
+2. Make a data folder, and mount your drive.
+3. Grab the startup scripts and install postgres.
+4. Install: psychopg, tweepy.
+5. Create a new sparse project - extweetwordcount.
+6. Grab from GitHub the spouts/python, bolts/python, topology/cli files, and move to the respective folders in extweetwordcount.
+7. Move the python files to the extweetwordcount folder.
+8. Run psycho-sample.py to create the tcount database and table.
+9. Run hello-stream-twitter.py to ensure Twitter API is configured correctly.
+10. Type sparse run to get everything started.  This will populate your database table.
+
+
 mkdir /data
 mount -t ext4 /dev/<your device> /data
 
-install psychopg
 pip install psycopg2==2.6.2
+pip install tweepy
 
 sparse quickstart extweetwordcount
 
@@ -10,6 +22,4 @@ git clone https://github.com/timothymaltjr/exercise_2.git
 mv psycopg-sample.py /root/extweetwordcount/psycopg-sample.py
 mv hello-stream-twitter.py /root/extweetwordcount/hello-stream-twitter.py
 mv Twittercredentials.py /root/extweetwordcount/Twittercredentials.py
-
-pip install tweepy
 psql -U postgres
