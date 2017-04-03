@@ -11,7 +11,7 @@ count = len(arguments)
 
 #Ends program due to too many or too few CLI arguments.
 if count != 2:
-    print("Please rerun and only enter two integers in the CLI.")
+    print("Please rerun and enter two integers in the CLI.")
     exit()
 
 input1 = int(arguments[0])
