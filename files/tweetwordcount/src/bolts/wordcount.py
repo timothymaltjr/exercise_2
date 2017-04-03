@@ -28,9 +28,9 @@ class WordCounter(Bolt):
         
         # Updating tcount
         cur = conn.cursor()
-        #cur.execute("INSERT INTO tweetwordcount (word, count)
-        #            SELECT word, self.counts[word]
-        #            WHERE NOT EXISTS (SELECT word FROM tweetwordcount WHERE word=%s", (word))            
+        cur.execute("INSERT INTO tweetwordcount (word,count)
+                    SELECT '%s', '%s' 
+                    WHERE NOT EXISTS (SELECT word FROM tweetwordcount where word=%s);", (word, self.counts[word], word))
         cur.execute("UPDATE tweetwordcount SET count=%s WHERE word=%s", (self.counts[word], word))                 
         conn.commit()
         
