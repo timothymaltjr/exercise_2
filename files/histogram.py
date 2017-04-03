@@ -9,7 +9,7 @@ program_name = sys.argv[0]
 arguments = sys.argv[1:]
 count = len(arguments)
 
-#Ends program due to CLI arguments not equaling two.
+#Ends program due to too many or too few CLI arguments.
 if count != 2:
     print("Please rerun and only enter two integers in the CLI.")
     exit()
@@ -25,15 +25,13 @@ else:
     upper = input1
     lower = input2
 
-print("Min:", lower)
-print("Max:", upper)
-
 #SQL script to return all words and counts greater/less/equal to the bounds.
-#cur = conn.cursor()
-#cur.execute("SELECT word, count from tweetwordcount WHERE count BETWEEN %s AND %s", (lower, upper))
-#records = cur.fetchall()
-#for rec in records:
-#   print(rec[0], ": ", rec[1])
-#conn.commit()
+cur = conn.cursor()
+cur.execute("SELECT word, count from tweetwordcount WHERE count BETWEEN %s AND %s ORDER BY count DESC, word", (lower, upper))
+records = cur.fetchall()
+for rec in records:
+   print(rec[0], rec[1])
+conn.commit()
 
 #conn.close()
+
