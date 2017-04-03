@@ -18,11 +18,15 @@ class WordCounter(Bolt):
         # Database name: Tcount 
         # Table name: Tweetwordcount 
         # you need to create both the database and the table in advance.
-        
-
+     
         # Increment the local count
         self.counts[word] += 1
         self.emit([word, self.counts[word]])
+        
+        cur = conn.cursor()
+        cur.execute("UPDATE tweetwordcount SET count=%s WHERE word=%s", (word, self.counts[word]))
+        conn.commit()
+        
 
         # Log the count - just to see the topology running
         self.log('%s: %d' % (word, self.counts[word]))
