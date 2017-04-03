@@ -5,8 +5,6 @@ from streamparse.bolt import Bolt
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
-
-
 class WordCounter(Bolt):
 
     def initialize(self, conf, ctx):
@@ -24,17 +22,16 @@ class WordCounter(Bolt):
         # Increment the local count
         self.counts[word] += 1
         self.emit([word, self.counts[word]])
-
         
         #Connecting to tcount
         conn = psycopg2.connect(database="tcount", user="postgres", password="pass", host="localhost", port="5432")
         
         # Updating tcount
         cur = conn.cursor()
-        cur.execute("INSERT INTO tweetwordcount (word, count)
-                    SELECT word, self.counts[word]
-                    WHERE NOT EXISTS (SELECT word FROM tweetwordcount WHERE word=%s", (word))            
-        cur.execute("UPDATE tweetwordcount SET count=%s WHERE word=%s", (word, self.counts[word]))                 
+        #cur.execute("INSERT INTO tweetwordcount (word, count)
+        #            SELECT word, self.counts[word]
+        #            WHERE NOT EXISTS (SELECT word FROM tweetwordcount WHERE word=%s", (word))            
+        cur.execute("UPDATE tweetwordcount SET count=%s WHERE word=%s", (self.counts[word], word))                 
         conn.commit()
         
 
