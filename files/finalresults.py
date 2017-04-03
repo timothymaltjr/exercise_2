@@ -10,27 +10,33 @@ arguments = sys.argv[1:]
 count = len(arguments)
 
 if count > 1:
-    print("Please enter only one word or argument.")
+    print("Please rerun and enter only one word/argument.")
     exit()
+
 elif count == 0:
-    print("This SQL will print all words and their counts.")
     #SQL script to return all words and their count ordered by word
-    #cur = conn.cursor()
-    #cur.execute("SELECT word, count from tweetwordcount ORDER BY word")
-    #records = cur.fetchall()
-    #for rec in records:
-    #   print(rec[0], ": ", rec[1])
-    #conn.commit()
-    #conn.close()
+
+    cur = conn.cursor()
+    cur.execute("SELECT word, count from tweetwordcount ORDER BY word")
+    records = cur.fetchall()
+    for rec in records:
+       print(rec[0], rec[1])
+    conn.commit()
+
+    conn.close()
 
 elif count == 1:
-    input1 = arguments[0]
-    print("Total number of occurrences of", input1, "are: NUMBERHERE")
-    #cur = conn.cursor()
-    #cur.execute("SELECT word, count from tweetwordcount WHERE word=%s", (input1))
-    #records = cur.fetchall()
-    #for rec in records:
-    #   print("Total number of occurrences of", rec[0], ": ", rec[1])
-    #conn.commit()
-    #conn.close()
+    #SQL script to return one word with its respective count
+
+    input1 = str(arguments[0])
+
+    cur = conn.cursor()
+    cur.execute("SELECT word, count from tweetwordcount WHERE word=%s", (input1))
+    records = cur.fetchall()
+    for rec in records:
+       print("Total number of occurrences of", rec[0], ": ", rec[1])
+    conn.commit()
+
+    conn.close()
+
 
