@@ -12,23 +12,7 @@ mv hello-stream-twitter.py /root/extweetwordcount/hello-stream-twitter.py
 mv Twittercredentials.py /root/extweetwordcount/Twittercredentials.py
 
 
-    create    extweetwordcount
-    create    extweetwordcount/.gitignore
-    create    extweetwordcount/config.json
-    create    extweetwordcount/fabfile.py
-    create    extweetwordcount/project.clj
-    create    extweetwordcount/README.md
-    create    extweetwordcount/src
-    create    extweetwordcount/src/bolts
-    create    extweetwordcount/src/bolts/__init__.py
-    create    extweetwordcount/src/bolts/wordcount.py
-    create    extweetwordcount/src/spouts
-    create    extweetwordcount/src/spouts/__init__.py
-    create    extweetwordcount/src/spouts/words.py
-    create    extweetwordcount/tasks.py
-    create    extweetwordcount/topologies
-    create    extweetwordcount/topologies/wordcount.clj
-    create    extweetwordcount/virtualenvs
-    create    extweetwordcount/virtualenvs/wordcount.txt
 
 
+
+pip install tweepy
