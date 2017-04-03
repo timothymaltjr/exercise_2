@@ -11,8 +11,5 @@ mv psycopg-sample.py /root/extweetwordcount/psycopg-sample.py
 mv hello-stream-twitter.py /root/extweetwordcount/hello-stream-twitter.py
 mv Twittercredentials.py /root/extweetwordcount/Twittercredentials.py
 
-
-
-
-
 pip install tweepy
+psql -U postgres
