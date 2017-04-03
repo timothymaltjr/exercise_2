@@ -29,11 +29,11 @@ print("Min:", lower)
 print("Max:", upper)
 
 #SQL script to return all words and counts greater/less/equal to the bounds.
-cur = conn.cursor()
-cur.execute("SELECT word, count from tweetwordcount WHERE count BETWEEN %s AND %s", (lower, upper))
-records = cur.fetchall()
-for rec in records:
-   print(rec[0], ": ", rec[1])
-conn.commit()
+#cur = conn.cursor()
+#cur.execute("SELECT word, count from tweetwordcount WHERE count BETWEEN %s AND %s", (lower, upper))
+#records = cur.fetchall()
+#for rec in records:
+#   print(rec[0], ": ", rec[1])
+#conn.commit()
 
-conn.close()
+#conn.close()
