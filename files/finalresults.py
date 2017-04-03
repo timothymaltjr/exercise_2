@@ -17,7 +17,7 @@ elif count == 0:
     #SQL script to return all words and their count ordered by word
 
     cur = conn.cursor()
-    cur.execute("SELECT word, count from tweetwordcount ORDER BY word")
+    cur.execute("SELECT word, count FROM tweetwordcount ORDER BY word")
     records = cur.fetchall()
     for rec in records:
        print(rec[0], rec[1])
@@ -31,7 +31,7 @@ elif count == 1:
     input1 = str(arguments[0])
 
     cur = conn.cursor()
-    cur.execute("SELECT word, count from tweetwordcount WHERE word=%s", (input1))
+    cur.execute("SELECT word, count FROM tweetwordcount WHERE word=%s", (input1))
     records = cur.fetchall()
     for rec in records:
        print("Total number of occurrences of", rec[0], ": ", rec[1])
