@@ -16,7 +16,7 @@ These are the steps I took to get this exercise completed:
 14. Type python finalresults.py to run the finalresults program (this is also designed for one argument, or an error message if more than one argument is passed).
 15. Type python histogram.py to run the histogram program (if no arguments, the program will list all entries in the database, if two integers are passed, the program will list all entries with counts between/inclusive of the arguments).
 16. Screenshots are in the github screenshots folder.
-17. The Plot.png screenshot is in the exercise_2 folder.
+17. The Plot-of-Top-20.png screenshot is in the exercise_2 folder.
 18. Architecture.pdf is in the github exercise_2 folder.
 19. This readme.txt is in the github exercise_2 folder.
 20. Enjoy!
