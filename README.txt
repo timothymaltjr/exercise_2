@@ -1,6 +1,6 @@
 These are the steps I took to get this exercise completed:
 
-1. Fire up AWS with the correct AMI, instance, and volume.
+1. Fire up AWS with the correct AMI instance and volume.
 2. Make a data directory, mount your drive to data, and go into that directory.
 3. Grab the startup scripts (setup_ucb_complete_plus_postgres.sh) and install.  These scripts include postgres which is required.
 4. Install: psychopg, tweepy.
