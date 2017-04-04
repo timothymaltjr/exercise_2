@@ -14,6 +14,7 @@ if count != 2:
     print("Please rerun and enter two integers in the CLI.")
     exit()
 
+#Retypes inputs as integers.
 input1 = int(arguments[0])
 input2 = int(arguments[1])
 
