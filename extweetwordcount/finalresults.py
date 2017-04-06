@@ -12,7 +12,7 @@ count = len(arguments)
 if count > 1:
     #Exits the program because more than one argument was passed.
     
-    print("Please rerun and enter only one word/argument.")
+    print("Please rerun and enter only zero or one word/argument.")
     exit()
 
 elif count == 0:
