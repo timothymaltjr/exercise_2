@@ -4,7 +4,7 @@ These are the steps I took to get this exercise completed:
 2. Make a "data" directory, mount your drive to data, and go into that directory.
 3. Grab the startup scripts (setup_ucb_complete_plus_postgres.sh) and install.  These scripts include postgres which is required.
 4. Install: psychopg, tweepy.
-5. Create a new Streamparse project - extweetwordcount, and delete the topologies/wordcount.clj file, the src/spouts/python file, and the srv/bolts/python file.
+5. Create a new Streamparse project - extweetwordcount, and delete the topologies/wordcount.clj file, the src/spouts/python file, and the src/bolts/python file.  Delete ONLY these files.  There are other files in some of these folders, please leave them alone.
 6. Clone from my GitHub my Exercise 2. 
 7. Move the topology/clj file (just one - extweetwordcount.clj), spouts/python file (also just one - tweets.py), bolts/python files (two files - parse.py and wordcount.py) from Exercise 2 into the respective extweetwordcount folders (topology, src/spouts, src/bolts).
 8. Move the python files - psycopg-sample.py, hello-stream-twitter.py, and Twittercredentials.py - to the extweetwordcount folder.
